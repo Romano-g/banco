@@ -5,7 +5,7 @@ public class ContaCorrente {
 		Scanner leitor = new Scanner(System.in);
 		double saldoInicial = 2000.0;
 		String mostrarSaldoAtual = """
-				---------------------------------------------------------------
+				\n---------------------------------------------------------------
 				Cliente:										Vickvi Rabello
 				Tipo de conta:  								Corrente
 				Saldo atual:    								R$ %.2f
@@ -17,10 +17,10 @@ public class ContaCorrente {
 		double saldoAtual = saldoInicial;
 		int escolhaCliente = 0;
 
-		
+
 		while (escolhaCliente != 4) {
 			System.out.println("""
-				Selecione uma opção:
+				\nSelecione uma opção:
 				1 - Consultar saldo;
 				2 - Receber valor;
 				3 - Transferir valor;
@@ -34,7 +34,7 @@ public class ContaCorrente {
 					continue;
 
 				case 2:
-					System.out.println("Digite o valor a ser recebido:");
+					System.out.println("\nDigite o valor a ser recebido:");
 					double valorRecebido = leitor.nextDouble();
 
 					if (valorRecebido > 0) {
@@ -43,12 +43,12 @@ public class ContaCorrente {
 						continue;
 					}
 
-					System.out.println("Valor inválido.");
+					System.out.println("\nValor inválido.");
 					System.out.printf(mostrarSaldoAtual, saldoAtual);
 					continue;
 
 				case 3:
-					System.out.println("Digite o valor a ser transferido:");
+					System.out.println("\nDigite o valor a ser transferido:");
 					double valorTranferencia = leitor.nextDouble();
 
 					if (valorTranferencia <= saldoAtual && valorTranferencia > 0) {
@@ -57,16 +57,16 @@ public class ContaCorrente {
 						continue;
 					}
 
-					System.out.println("Saldo insuficiente");
+					System.out.println("\nSaldo insuficiente");
 					System.out.printf(mostrarSaldoAtual, saldoAtual);
 					continue;
 
 				case 4:
-					System.out.println("Encerrando operações.");
+					System.out.println("\nEncerrando operações.");
 					break;
 
 				default:
-					System.out.println("Opção inválida.");
+					System.out.println("\nOpção inválida.");
 			}
 		}
 	}
